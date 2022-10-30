@@ -1,9 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 html {
-    color: black;
+    --fg: black;
+    --bg: #F4EFEC;
+    --accent: crimson;
+}
+
+html.dark-theme {
+    --fg: #a6a28c;
+    --bg: #20201d;
+    --accent: #60ac39;
+}
+
+button.theme-toggle {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+}
+
+html {
+    color: var(--fg);
     /* background-color: white; */
-    background-color: #F4EFEC;
+    background-color: var(--bg);
     
     /* font-family: 'Lato', 'Open Sans', 'Consolas', sans-serif; */
     font-family: 'EB Garamond', 'Garamond', 'Playfair Display', serif;
@@ -83,12 +104,12 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'EB Garamond', 'Garamond', 'Playfair Display', serif;
 }
 h1 {
-    color: crimson;
+    color: var(--accent);
 
     font-size: 3em;
 }
 h2 {
-    color: crimson;
+    color: var(--accent);
 
     font-size: 2em;
 
