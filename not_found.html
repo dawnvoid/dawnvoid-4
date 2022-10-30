@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>not found</title>
+
+        <link rel="stylesheet" type="text/css" href="reset.css">
+        <link rel="stylesheet" type="text/css" href="theme.css">
+        <style>
+            h1 {
+                color: inherit;
+                font-size: inherit;
+                text-align: center;
+            }
+
+            p {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href='index.html'>home</a></li>
+                    <li><a href='about.html'>about</a></li>
+                    <li><a href='media.html'>media</a></li>
+                    <li><a href='links.html'>links</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h1>page not found</h1>
+            <p>click the scribble to go back</p>
+            <a id="backlink" href="index.html"><img src="not_found_scribble.png"></a>
+            <script>
+                // If javascript isn't enabled, backlink defaults to index.html.
+                // If javascript is enabled, set backlink to actually go back.
+                link = document.getElementById("backlink");
+                link.setAttribute("href", "javascript:history.back()");
+            </script>
+        </main>
+
+        <footer>
+            &copy; 2022 your mom
+        </footer>
+    </body>
+</html>

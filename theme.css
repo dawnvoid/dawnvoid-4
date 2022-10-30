@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+html {
+    color: black;
+    /* background-color: white; */
+    background-color: #F4EFEC;
+    
+    /* font-family: 'Lato', 'Open Sans', 'Consolas', sans-serif; */
+    font-family: 'EB Garamond', 'Garamond', 'Playfair Display', serif;
+}
+
+body {
+    display: flex;
+    flex-flow: row-reverse nowrap;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+ul {
+    list-style-type: "- ";
+    list-style-position: inside;
+}
+
+details summary {
+    cursor: pointer;
+    user-select: none;
+}
+details summary:hover {
+    text-decoration: underline;
+}
+
+figure {
+    margin-bottom: 1em;
+}
+figure figcaption {
+    text-align: center;
+    font-style: italic;
+}
+
+pre {
+    font-family: monospace;
+    line-height: 1;
+}
+
+header {
+    flex: 1 100;
+    writing-mode: vertical-lr;
+
+    padding: 1em;
+}
+
+nav {
+    display: block;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: block;
+}
+nav ul li {
+    display: inline-block;
+    margin: 0 0 1ch 0;
+}
+
+main {
+    flex: 1 1 50%;
+    max-width: 52ch;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'EB Garamond', 'Garamond', 'Playfair Display', serif;
+}
+h1 {
+    color: crimson;
+
+    font-size: 3em;
+}
+h2 {
+    color: crimson;
+
+    font-size: 2em;
+
+    margin: 1em 0 0 0;
+}
+
+p {
+    text-align: justify;
+}
+
+footer {
+    flex: 1 100;
+    writing-mode: vertical-rl;
+
+    /* outline: 1px solid blue; */
+    
+    padding: 1em;
+}
