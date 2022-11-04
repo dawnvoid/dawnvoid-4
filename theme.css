@@ -50,6 +50,11 @@ img {
     margin: 0 auto;
 }
 
+video {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
 ul {
     list-style-type: "- ";
     list-style-position: inside;
