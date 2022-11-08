@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>goals</title>
+
+        <link rel="stylesheet" type="text/css" href="reset.css">
+        <link rel="stylesheet" type="text/css" href="theme.css">
+    </head>
+    <body>
+        <button class="theme-toggle">
+            🌓
+        </button>
+        <script src="theme.js" async></script>
+
+        <header>
+            <nav>
+                <ul>
+                    <li><a href='index.html'>home</a></li>
+                    <li><a href='about.html'>about</a></li>
+                    <li><a href='media.html'>media</a></li>
+                    <li><a href='links.html'>links</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h1>goals.</h1>
+
+            <p>
+                These are my goals. They're organized as a hierarchical checklist.
+            </p>
+
+            <style>
+                ol {
+                    list-style-type: none;
+                }
+
+                progress {
+                    width: 2em;
+                    height: 0.5em;
+                    margin-right: 0.5em;
+
+                    -webkit-appearance: none;
+                    appearance: none;
+
+                    background-color: transparent;
+                    border: 1px solid var(--accent);
+                }
+                progress::-webkit-progress-bar {
+                    background-color: transparent;
+                    border: 1px solid var(--accent);
+                }
+                progress::-webkit-progress-value {
+                    background-color: var(--accent);
+                }
+                progress::-moz-progress-bar {
+                    background-color: var(--accent);
+                }
+
+                summary {
+                    list-style: none;
+                }
+                summary div::after {
+                    content: " (+)";
+                    opacity: 0.5;
+                }
+                details[open] > summary div::after {
+                    content: " (-)";
+                }
+
+                li, summary {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    align-items: baseline;
+                }
+            </style>
+
+            <section>
+                <h2>skills & activities</h2>
+
+                <ol>
+                    <li>
+                        <details>
+                            <summary>
+                                <progress value="0.2"></progress>
+                                <div>learn toki pona</div>
+                            </summary>
+                            <ol>
+                                <li><progress value="0.59"></progress>vocab</li>
+                                <li><progress value="0.59"></progress>script (sitelen pona)</li>
+                                <li><progress value="0.5"></progress>grammar</li>
+                                <li>
+                                    <details>
+                                        <summary>
+                                            <progress value="0.0"></progress>
+                                            <div>fluency</div>
+                                        </summary>
+                                        <ol>
+                                            <li><progress value="0.0"></progress>reading</li>
+                                            <li><progress value="0.0"></progress>writing</li>
+                                            <li><progress value="0.0"></progress>listening</li>
+                                            <li><progress value="0.0"></progress>speaking</li>
+                                        </ol>
+                                    </details>
+                                </li>
+                            </ol>
+                        </details>
+                    </li>
+                    <li><progress value="0.25"></progress>drawing</li>
+                    <li><progress value="0.1"></progress>writing</li>
+                    <li><progress value="0.0"></progress>reading</li>
+                    <li>
+                        <details>
+                            <summary>
+                                <progress value="0.2"></progress>
+                                <div>gamedev</div>
+                            </summary>
+                            <ol>
+                                <li><progress value="0.0"></progress>actually finish a game</li>
+                                <li><progress value="0.0"></progress>do a game jam</li>
+                                <li><progress value="0.1"></progress>learn 3d modeling</li>
+                                <li><progress value="0.0"></progress>learn procedural animation</li>
+                            </ol>
+                        </details>
+                    </li>
+                </ol>
+            </section>
+
+            <!-- <section>
+                <h2>existence</h2>
+
+                <ol>
+                    
+                    <li><progress value="0.25"></progress>happiness</li>
+                    <li>
+                        <details>
+                            <summary>
+                                <progress value="0.0"></progress>
+                                <div>freedom</div>
+                            </summary>
+                            <ol>
+                                <li><progress value="0.1"></progress>complete financial independence</li>
+                                <li><progress value="0.2"></progress>time</li>
+                                <li><progress value="0.0"></progress>food</li>
+                                <li><progress value="0.0"></progress>water</li>
+                                <li><progress value="0.0"></progress>shelter</li>
+                                <li><progress value="0.0"></progress>electricity</li>
+                                <li><progress value="0.0"></progress>internet</li>
+                            </ol>
+                        </details>
+                    </li>
+                </ol>
+            </section> -->
+        </main>
+
+        <footer>
+            &copy; 2022 your mom
+        </footer>
+    </body>
+</html>
