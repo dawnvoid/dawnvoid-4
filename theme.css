@@ -55,11 +55,17 @@ video {
     margin: 0 auto;
 }
 
+ul, ol {
+}
 ul {
     list-style-type: "- ";
     list-style-position: inside;
 }
-ul ul { /* Allow nested lists to have indents. */
+ol {
+    list-style-type: decimal;
+    list-style-position: inside;
+}
+ul ul, ul ol, ol ul, ol ol { /* Allow nested lists to have indents. */
     margin-left: 1em;
 }
 
