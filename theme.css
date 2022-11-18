@@ -59,14 +59,17 @@ ul, ol {
 }
 ul {
     list-style-type: "- ";
-    list-style-position: inside;
+    list-style-position: outside;
+}
+ul li, ol li {
+    margin-left: 1ch;
 }
 ol {
     list-style-type: decimal;
     list-style-position: inside;
 }
 ul ul, ul ol, ol ul, ol ol { /* Allow nested lists to have indents. */
-    margin-left: 1em;
+    /* margin-left: 1em; */
 }
 
 details summary {
