@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Making a Website</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+
+        <style>
+            body {
+                font-family: 'Atkinson Hyperlegible', sans-serif;
+            }
+
+            header {
+                max-width: 70ch;
+                margin: 0 auto;
+            }
+
+            main {
+                max-width: 70ch;
+                margin: 0 auto;
+            }
+
+            footer {
+                max-width: 70ch;
+                margin: 0 auto;
+            }
+
+            pre {
+                background-color: #EEE;
+                border: 1px solid;
+                border-radius: 0.5ch;
+
+                white-space: pre-wrap;
+            }
+            pre code {
+                border: none;
+                padding: 0.5ch;
+            }
+
+            code {
+                background-color: #EEE;
+                border: 1px solid;
+                border-radius: 0.3ch;
+                display: inline-block;
+                padding: 0 0.5ch;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">home</a></li>
+                    <li><a href="about.html">about</a></li>
+                    <li><a href="media.html">media</a></li>
+                    <li><a href="links.html">links</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h1>website tutorial.</h1>
+
+            <section>
+                <h2>table of contents</h2>
+
+                <ol>
+                    <li><a href="#1">intro</a></li>
+                    <li><a href="#2">your first site</a></li>
+                </ol>
+            </section>
+
+            <section>
+                <h2 id="1">intro</h2>
+
+                <p>
+                    This page is my attempt at a tutorial for absolute beginners. I've tried to make it as simple and accessible as possible.
+                </p>
+            </section>
+
+            <section>
+                <h2 id="2">your first site</h2>
+
+                <p>
+                    Lets make a website!
+                </p>
+
+                <p>
+                    Websites usually have 3 parts:
+                    <ul>
+                        <li>HTML &mdash; This is where the words and pictures go.</li>
+                        <li>CSS &mdash; This is where the styles and colors go.</li>
+                        <li>Javascript &mdash; Lets you run code on people's browsers, which means you can do all sorts of fancy stuff.</li>
+                    </ul>
+                    For now, we'll just focus on HTML. Learn the basics before trying fancy stuff.
+                </p>
+
+                <p>
+                    First, we need somewhere to write our HTML. Make a text file called <code>index.html</code> and paste the following code into it.
+                </p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;This is the title of my website.&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;This is the content of my website.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+                <p>
+                    Notice the indentation. You don't have to indent your code &mdash; HTML doesn't care. But I <em>highly</em> recommend it. If you don't, your code will look like a mess. It will get harder and harder to read as you add more stuff.
+                </p>
+
+                <p>
+                    In HTML, anything surrounded by angle brackets is a "tag". Like <code>&lt;this&gt;</code>. Tags almost always come in pairs. The first one is the "opening tag". The second one is a closing tag, which has a slash (/) in it, like <code>&lt;/this&gt;</code>. When you put them together, you get <code>&lt;this&gt;&lt;/this&gt;</code>.
+                </p>
+
+                <p>
+                    Stuff can go between the opening and closing tags. For example: <code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code>.
+                </p>
+
+                <p>
+                    Different tags have different meanings, and do different things. You don't need to learn them all, you just need to know the common ones. Let's go through the ones in the code you just pasted:
+                    <ul>
+                        <li>
+                            <code>&lt;!DOCTYPE html&gt;</code> &mdash; This one isn't actually a tag. Notice how it doesn't have a closing tag. It's just something you have to put at the top of every .html file. You're gonna have to get used to weird exceptions like this. It's a common thing across HTML, CSS, and Javascript. Yes, it sucks. No, it's not gonna get better any time soon.
+                        </li>
+                        <li>
+                            <code>&lt;html&gt;</code> &mdash; Everything (except the above !DOCTYPE) goes inside of this. By inside, I mean between the opening and closing tags.
+                        </li>
+                        <li>
+                            <code>&lt;head&gt;</code> &mdash; This is where meta-information about the .html file goes, like the title of your page, what fonts to load, and what CSS and Javascript files to load. For now, we'll be keeping things simple.
+                        </li>
+                        <li>
+                            <code>&lt;title&gt;</code> &mdash; This is the name of the page.
+                        </li>
+                        <li>
+                            <code>&lt;body&gt;</code> &mdash; This is where the actual content goes, like paragraphs and images.
+                        </li>
+                        <li>
+                            <code>&lt;p&gt;</code> &mdash; This is a paragraph.
+                        </li>
+                    </ul>
+                </p>
+
+                <p>
+                    You should be able to open the .html file in your browser. On Windows, you can right click <code>index.html</code>, click "Open with", and select your browser. If this doesn't work, You can put the file's absolute path in your browser's URL box. For example: <code>C:/Users/dawn/Documents/website/index.html</code>. You might need to replace backslashes (\) with forward-slashes (/) for that to work.
+                </p>
+
+                <p>
+                    Whenever you make a change to the .html file, reload the page on your browser and it should update.
+                </p>
+
+                <p>
+                    We're basically done! Go ahead and play around with it.
+                    <ul>
+                        <li>Try changing the page's title.</li>
+                        <li>Try changing text in the paragraph.</li>
+                        <li>Try adding new paragraphs.</li>
+                        <li>Try putting a paragraph inside of a paragraph! It doesn't make much sense, but it should work.</li>
+                        <li>Try removing a closing tag. It should still work, but your browser might get confused.</li>
+                    </ul>
+                </p>
+            </section>
+
+            <p>
+                More coming soon...
+            </p>
+        </main>
+
+        <footer>
+            &copy; 2022 your mom
+        </footer>
+    </body>
+</html>
