@@ -143,6 +143,7 @@ h2 {
 
 p {
     text-align: justify;
+    margin-bottom: 1em;
 }
 
 footer {
@@ -152,4 +153,8 @@ footer {
     /* outline: 1px solid blue; */
     
     padding: 1em;
+}
+
+#secret:not(:target) .secret {
+    display: none;
 }
