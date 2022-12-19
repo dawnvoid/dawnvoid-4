@@ -35,6 +35,42 @@
                 I occasionally do photography, draw, or make music.
             </p>
 
+            <figure>
+                <img id="header-art" src="/header_art/albete.png" style="cursor: pointer;">
+                <figcaption id="header-art-caption">albete</figcaption>
+            </figure>
+            <script>
+                const img_directory = "/header_art/"
+                const img_names = [
+                    "albete",
+                    "auga",
+                    "flower_prince",
+                    "ijago",
+                    "illix",
+                    "killo",
+                    "kugo",
+                    "misi",
+                    "ooo",
+                ];
+                const img_file_extension = ".png"
+                
+                let img = document.getElementById("header-art");
+                let caption = document.getElementById("header-art-caption");
+
+                function show_random_image() {
+                    let idx = Math.floor(Math.random() * img_names.length);
+                    let img_name = img_names[idx];
+                    let img_path = img_directory + img_name + img_file_extension;
+
+                    img.src = img_path;
+                    caption.innerText = img_name;
+                }
+
+                show_random_image();
+
+                img.addEventListener("click", show_random_image);
+            </script>
+
             <section>
                 <h2>photos</h2>
                 <p>
