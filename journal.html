@@ -74,14 +74,6 @@
                 margin-top: 2rem;
             }
     
-            ul {
-                list-style-type: disc;
-                list-style-position: outside;
-            }
-            ul li {
-                margin-left: 2ch;
-            }
-    
             table {
                 border: 1px solid;
     
@@ -174,6 +166,58 @@
                 <li><a href="#2">Terminal</a></li>
                 <li><a href="#1">Black Planet</a></li>
             </ol>
+
+            <article id="19">
+                <h2>PirateBox, Part I</h2>
+                <p>2022-20-11</p>
+                <p>
+                    I want to build a <a href="https://www.piratebox.cc/">PirateBox</a>. I've got an old Raspberry Pi 2B lying around.
+                </p>
+                <p>
+                    First, I installed <a href="https://dietpi.com/">DietPi</a>, a lightweight OS for Raspberry Pis. It's basically some scripts running on top of a cleaned-up version of the stock Raspberry Pi OS. I wanted something fast and headless. Shit was super easy to install.
+                </p>
+                <p>
+                    The Raspberry Pi 2B doesn't have wifi. I bought a <a href="https://www.amazon.com/Cudy-WU1300S-1300Mbps-Wireless-Compatible/dp/B084FS7BWF/">wireless adapter</a> online. I made sure to get one with AP mode, which means it's able to broadcast its own internet connection (like a hotspot). A lot of adapters, especially Realtek-based ones, don't have this. Also, it needed to have updated drivers that worked on linux.
+                </p>
+                <p>
+                    The drivers were available on the manufacturer's website. Curl wasn't working, so I downloaded it to my laptop and used SCP to transfer it. By default, DietPi uses a lightweight ssh server called DropBear instead of OpenSSH. Unfortunately, it doesn't have SCP. However, you can install openssh-client, which comes with SCP, and doesn't conflict with dropbear.
+                </p>
+                <p>
+                    The driver is actually a .zip file with source code inside that needs to be compiled. To get it to compile, I needed to install the following:
+                    <ul>
+                        <li>build-essential (via dietpi-software)</li>
+                        <li>bc</li>
+                        <li>raspberrypi-kernel-headers</li>
+                    </ul>
+                </p>
+                <figure>
+                    <img src="journal_piratebox_1.png">
+                    <figcaption>Compiling the driver takes a long-ass time.</figcaption>
+                </figure>
+                <p>
+                    So after <code>sudo make</code> and <code>sudo make install</code>, I had to run <code>sudo modprobe -r 88x2bu</code> and <code>sudo modprobe 88x2bu</code>, which removes any kernel modules called "88x2bu" and adds the one that was just compiled.
+                </p>
+                <figure>
+                    <img src="journal_piratebox_2.png">
+                    <figcaption>finally!</figcaption>
+                </figure>
+                <p>
+                    Unfortunately, it won't start. The adapter seems to dump some of its firmware into the console when plugged in. Also, it seems like I can't set it to AP mode using <code>iwconfig wlan0 mode master</code>. I'll try an <a href="https://github.com/morrownr/88x2bu-20210702">alternative driver</a>.
+                </p>
+                <p>
+                    The install script is super easy, works without a hitch. I install hostapd and dnsmasq. I do the compatibility configuration for hostapd shown on the <a href="https://wiki.gentoo.org/wiki/Hostapd#Access_Point">gentoo wiki</a>. I tried it with the 5G version, but hostapd wouldn't start.
+                </p>
+                <p>
+                    I also ran <code>rfkill unblock wlan</code>, which fixed the adapter being listed as "DOWN" when running <code>ip address</code>. Finally, I ran <code>dietpi-config</code> and set up the adapter.
+                </p>
+                <figure>
+                    <img src="journal_piratebox_3.png">
+                    <figcaption>this took <em>hours</em> to get working</figcaption>
+                </figure>
+                <p>
+                    Part II coming soon. I'll be setting up dnsmasq to redirect everything to a local web server. And the web server will be hosting something... not really sure yet. (I literally don't have a use case for this project).
+                </p>
+            </article>
 
             <article id="18">
                 <h2>Yanking YouTube's Cables out of my Brain</h2>

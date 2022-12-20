@@ -152,6 +152,13 @@ footer {
     padding: 1em;
 }
 
+code {
+    font-family: monospace;
+    border: 1px solid var(--fg);
+    padding-left: 0.5ch;
+    padding-right: 0.5ch;
+}
+
 #secret:not(:target) .secret {
     display: none;
 }
