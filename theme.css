@@ -162,3 +162,7 @@ code {
 #secret:not(:target) .secret {
     display: none;
 }
+
+em {
+    font-style: italic;
+}
