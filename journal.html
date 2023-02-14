@@ -115,6 +115,15 @@
             #toc a::after {
                 content: "";
             }
+
+            ul {
+                list-style-position: outside;
+                padding-left: 4ch;
+            }
+            ol {
+                list-style-position: outside;
+                padding-left: 4ch;
+            }
         </style>
     </head>
     
@@ -147,6 +156,8 @@
 
             <h2>Index</h2>
             <ol reversed id="toc">
+                <li><a href="#21">To Reach the Light</a></li>
+                <li><a href="#20">My First Game Jam</a></li>
                 <li><a href="#19">PirateBox, Part I</a></li>
                 <li><a href="#18">Yanking YouTube's Cables out of my Brain</a></li>
                 <li><a href="#17">"Game Idea"</a></li>
@@ -167,6 +178,81 @@
                 <li><a href="#2">Terminal</a></li>
                 <li><a href="#1">Black Planet</a></li>
             </ol>
+
+            <article id="21">
+                <h2>To Reach the Light</h2>
+                <p>2023-01-19</p>
+                <p>
+                    So I did a game jam (<a href="https://experimentaljams.com/">experimentaljams.com</a>), and <em>actually finished something for once??</em> Incredible, I know. You can find it <a href="https://experimentaljams.com/game/?id=48">here</a> and <a href="https://dawn-void.itch.io/to-reach-the-light">here</a>.
+                </p>
+
+                <figure>
+                    <img src="journal_to_reach_the_light.png">
+                    <figcaption>my game</figcaption>
+                </figure>
+            </article>
+
+            <article id="20">
+                <h2>My First Game Jam</h2>
+                <p>2023-01-19</p>
+                <p>
+                    I linked it on my homepage, but <a href="https://neocities.org/site/scarbyte/">scarbyte</a> made <a href="https://experimentaljams.com/">experimentaljams.com</a> for hosting game jams. This month's theme is "grid", which is kind of ehh, but whatever. I'll figure something out.
+                </p>
+                <figure>
+                    <img src="motd/2023-01-17_button.gif">
+                    <figcaption>it also has an amazing button</figcaption>
+                </figure>
+                <p>
+                    Starting projects is easy, but it's hard to sustain enough self-motivation to see them through. Enter game jams. It's a low-stakes way to force yourself to finish something small. And keeping things small means you can play around with weird and novel features &mdash; this is what Experimental Jams is all about!
+                </p>
+                <p>
+                    (Seriously, if you want to make games but don't know where to start, download <a href="https://godotengine.org/">Godot</a> right now and do a game jam.) 
+                </p>
+                <figure>
+                    <img src="journal_egj_1.png">
+                    <figcaption>an earlier idea I scrapped</figcaption>
+                </figure>
+                <p>
+                   I'm starting with sokoban as a base. There are two characters, Blue and Yellow, who need to find each other. You can switch to either one's perspective at will. You win by moving both characters into the same spot.
+                </p>
+                <figure>
+                    <img src="journal_egj_2.png">
+                    <figcaption>the tutorial level, with Blue</figcaption>
+                </figure>
+                <figure>
+                    <img src="journal_egj_3.png">
+                    <figcaption>they found their way!</figcaption>
+                </figure>
+                <p>
+                    Here are some mechanics I'm toying around with adding:
+                    <ul>
+                        <li>linked boxes &mdash; Boxes with matching colors. Pushing one pushes all.</li>
+                        <li>floor buttons &mdash; Stand on it or push a box on top and it'll provide power to something.</li>
+                        <li>pistons &mdash; Pushes boxes when powered.</li>
+                        <li>doors &mdash; Impassible unless powered.</li>
+                        <li>ghosts &mdash; Colored ghosts only chase after characters with the same color. Moves slowly, but can phase through walls.</li>
+                        <li>projectile attacks &mdash; Iffy about this one, but who knows. Characters can kill ghosts, but only if their color is different. Maybe instead of projectiles, characters kill ghosts on contact?</li>
+                    </ul>
+                </p>
+                <p>
+                    There's no story, but there are vague themes of coming out of one's shell and escaping dark places together. I think for the last level, Yellow will be gone and Blue will be on her own.
+                </p>
+                <p>
+                    I'll post more about it as we get closer to the deadline and I add more stuff. I'm pretty busy with school these days :/
+                </p>
+                <!-- <p>
+                    Is it possible to design monolithic social systems spanning a global scale?
+                </p>
+                <p>
+                    We can architect governments and write policies, but what happens when you get bigger and bigger, more and more complex?
+                </p>
+                <p>
+                    You get an autonomous entity of sorts. A thing so vast that nobody is in control. It has a self-preservation instinct, because its components do &mdash; the people who work government jobs want to keep their jobs. It has an instinct for progress, its components do. It has mind of its own &mdash; not in a conscious way, but in a behavioral way.
+                </p>
+                <p>
+                    If an entity like this is constructed, and allowed to grow large enough... No longer under control by man, it serves only itself. We are only allowed freedom to the extent that it ensures the continued well-being of the entity. We are only granted existence to the extent that it ensures the continued well-being of the entity. We will have built a social computer with an instinct for self-preservation. And while we may not be obsolete, it is only a matter of time.
+                </p> -->
+            </article>
 
             <article id="19">
                 <h2>PirateBox, Part I</h2>
