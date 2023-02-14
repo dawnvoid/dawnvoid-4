@@ -48,6 +48,16 @@
                 display: inline-block;
                 padding: 0 0.5ch;
             }
+
+            figure {
+                width: min-content; /* hacky! i'll fix this eventually */
+                margin: 0 auto;
+                padding: 0;
+            }
+            figcaption {
+                text-align: center;
+                font-style: italic;
+            }
         </style>
     </head>
     <body>
@@ -71,6 +81,8 @@
                 <ol>
                     <li><a href="#1">intro</a></li>
                     <li><a href="#2">your first site</a></li>
+                    <li><a href="#2">semantics and content</a></li>
+                    <li><a href="#2">links and images</a></li>
                 </ol>
             </section>
 
@@ -170,9 +182,165 @@
                 </p>
             </section>
 
-            <p>
-                More coming soon...
-            </p>
+            <section>
+                <h2 id="3">semantics and content</h2>
+
+                <p>
+                    HTML is supposed to be accessible. Blind people use the internet too! They use something called a "screen reader". It's a program that looks at the HTML of your site and tries to verbally explain what is going on to the user. But websites are confusing - how does the screen reader tell what the different parts are? This is where semantics come in.
+                </p>
+
+                <p>
+                    "Semantic HTML" just means using the right tags for each type of content. If you have a header, it should go in a <code>&lt;header&gt;</code> tag. If you have a footer, it should go in a <code>&lt;header&gt;</code> tag. If you have a section, put it in a <code>&lt;section&gt;</code> tag.
+                </p>
+
+                <p>
+                    Here are some tags and their semantics:
+                    <ul>
+                        <li><code>&lt;p&gt;</code> &mdash; This is a paragraph.</li>
+                        <li><code>&lt;h1&gt;</code> &mdash; This is a title.</li>
+                        <li><code>&lt;h2&gt;</code> &mdash; This is a subtitle.</li>
+                        <li><code>&lt;h3&gt;</code> &mdash; This is a sub-subtitle. There's also <code>&lt;h4&gt;</code>, <code>&lt;h5&gt;</code>, and <code>&lt;h6&gt;</code>. You get the idea.</li>
+                        <li><code>&lt;header&gt;</code> &mdash; This is for introductory content: navigation links, the title, your logo, etc.</li>
+                        <li><code>&lt;main&gt;</code> &mdash; This is for the main content of your page. Everything you're reading right now is inside it.</li>
+                        <li><code>&lt;footer&gt;</code> &mdash; This is usually for copyright info.</li>
+                        <li><code>&lt;nav&gt;</code> &mdash; This is for navigation links. Usually, it's inside the <code>&lt;header&gt;</code>.</li>
+                        <li><code>&lt;ul&gt;</code> &mdash; This is for an unordered list, like the one you're looking at right now.</li>
+                        <li><code>&lt;ol&gt;</code> &mdash; This is for an ordered list, which usually has numbers instead of bullet points.</li>
+                        <li><code>&lt;li&gt;</code> &mdash; This is an item inside a list. Usually, there are multiple of these inside a <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code>. Each bullet point in this list is one of these.</li>
+                        <li><code>&lt;section&gt;</code> &mdash; This is section. Each chapter of this guide is in one of these.</li>
+                        <li><code>&lt;article&gt;</code> &mdash; Similar to <code>&lt;section&gt;</code>, but specifically for articles.</li>
+                    </ul>
+                </p>
+
+                <p>
+                    Here's a simplified version of this site:
+                </p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Making a Website&lt;/title&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+        &lt;header&gt;
+            &lt;nav&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="index.html"&gt;home&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="about.html"&gt;about&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="media.html"&gt;media&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="links.html"&gt;links&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/nav&gt;
+        &lt;/header&gt;
+
+        &lt;main&gt;
+            &lt;h1&gt;website tutorial.&lt;/h1&gt;
+
+            &lt;section&gt;
+                &lt;h2&gt;table of contents&lt;/h2&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;intro&lt;/li&gt;
+                    &lt;li&gt;your first site&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/section&gt;
+            
+            &lt;section&gt;
+                &lt;h2&gt;intro&lt;/h2&gt;
+                &lt;p&gt;blah blah blah&lt;/p&gt;
+                &lt;p&gt;blah blah blah&lt;/p&gt;
+                &lt;p&gt;blah blah blah&lt;/p&gt;
+            &lt;/section&gt;
+            
+            &lt;section&gt;
+                &lt;h2&gt;your first site&lt;/h2&gt;
+                &lt;p&gt;blah blah blah&lt;/p&gt;
+                &lt;p&gt;blah blah blah&lt;/p&gt;
+                &lt;p&gt;blah blah blah&lt;/p&gt;
+            &lt;/section&gt;
+        &lt;/main&gt;
+
+        &lt;footer&gt;
+            copyright 2022 your mom
+        &lt;/footer&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+                <p>
+                    The semantic definitions for these tags are not super exact, so sometimes it's not clear which tag you should use or where you should put something. That's fine. Just try your best, it doesn't have to be perfect.
+                </p>
+
+                <p>
+                    Notice how I use blank lines to separate parts of my code. Your code will be easier to read if related things are grouped together and unrelated things are separated.
+                </p>
+
+                <p>
+                    There's also the <code>&lt;div&gt;</code> tag. It has no semantic meaning. You'll see it used a <em>lot</em>, because people are too lazy to use the right tags. Don't do this, it's rude to blind people. Try to only use them when no tags exist for that meaning, or when there's no meaning at all. For example: Later on, we'll cover CSS, which often use divs to help layouts.
+                </p>
+
+                <p>
+                    You don't <em>have</em> to use semantic HTML. You could just use divs for everything. You could manually style your divs to make them look like titles, lists, menus, buttons, whatever. But please don't.
+                </p>
+
+                <p>
+                    By default, browsers have styles for some tags. This is so sites that have no CSS are still readable. Later we'll see how to override these styles.
+                </p>
+            </section>
+
+            <section>
+                <h2 id="4">links and images</h2>
+
+                <p>
+                    Links use the <code>&lt;a&gt;</code> tag. They look like <code>&lt;a href="https://neocities.org"&gt;Neocities&lt;/a&gt;</code>. The <code>href=""</code> part is an <em>attribute</em> of the <code>&lt;a&gt;</code> tag. Inside the quotes goes the url of the link. The content of the <code>&lt;a&gt;</code> tag (the stuff in between the opening and closing tags) is the actual text of the link. So this example ends up looking like: <a href="https://neocities.org">Neocities</a>.
+                </p>
+
+                <p>
+                    You can link to other pages on your site this way. Usually, people put the main navigation links in a <code>&lt;nav&gt;</code> tag.
+                </p>
+
+                <p>
+                    Images use the <code>&lt;img&gt;</code> tag. They look like <code>&lt;img src="tutorial_image.png"&gt;</code>. Notice how this is one of the few tags that doesn't have an opening/closing pair! It's just one tag. The <code>src</code> attribute needs a path to the image file. If I put the image in a folder called <code>images</code>, my link would look like <code>&lt;img src="images/tutorial_image.png"&gt;</code>. Here's what it looks like:
+                </p>
+                <img src="tutorial_image.png">
+
+                <p>
+                    Figures use the <code>&lt;figure&gt;</code> tag. Anything inside it is part of the figure. Usually, it's an image. You can also put a <code>&lt;figcaption&gt;</code> tag inside it to give it a caption. Note that the default browser style might make the layout a bit wonky - we'll learn how to override/reset it later. Here's the result:
+                </p>
+<pre><code>&lt;figure&gt;
+    &lt;img src="tutorial_image.png"&gt;
+    &lt;figcaption&gt;the tutorial image&lt;/figcaption&gt;
+&lt;/figure&gt;
+</code></pre>
+                <figure>
+                    <img src="tutorial_image.png">
+                    <figcaption>the tutorial image</figcaption>
+                </figure>
+
+            </section>
+
+            <section>
+                <h2 id="5">intro to css</h2>
+
+                <p>
+                    Coming soon...
+                </p>
+            </section>
+
+            <section>
+                <h2 id="6">css block model</h2>
+
+                <p>
+                    Coming soon...
+                </p>
+            </section>
+
+            <section>
+                <h2 id="7">intro to layouts</h2>
+
+                <p>
+                    Coming soon...
+                </p>
+            </section>
         </main>
 
         <footer>
