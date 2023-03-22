@@ -5,182 +5,245 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <title>test</title>
-
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@0;1&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="reset.css">
-
+        
+        <title>test</title>
+    
         <style>
-            @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
-
-            html {
-                background-color: black;
-                color: white;
-
-                font-family: "Major Mono Display", Consolas, monospace;
-                /* font-family: monospace; */
+            :root {
+                /* --fg: #FD7700; */
+                --fg: #DA761C;
+                /* --bg: black; */
+                --bg: #19110E;
             }
 
-            .overlay-container {
+            body {
+                color: var(--fg);
+                background-color: var(--bg);
+
+                /* font-family: 'Manrope', 'Inter', 'Open Sans', sans-serif; */
+                /* font-family: monospace; */
+                font-family: 'Xanh Mono', 'SimSun', monospace;
+                font-size: 1rem;
+
+                /* outline: 1px solid; */
+                display: flex;
+            }
+
+            main {
+                max-width: 80ch;
+                width: calc(100% - 2ch);
+                margin: 0 auto;
+            }
+
+            .screen {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100vh;
+            }
+
+            .cbox {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .cbox-grid {
                 display: grid;
                 grid-template-columns: 1fr;
                 grid-template-rows: 1fr;
-
-                width: 100%;
-            }
-            .overlay-item {
-                grid-column-start: 1;
-                grid-column-end: 2;
-                grid-row-start: 1;
-            }
-
-            /* svg {
-                outline: 1px solid red;
-                
-                aspect-ratio: 1 / 1;
-                width: 100%;
-                height: auto;
-                max-width: 100vh;
-
-                position: relative;
-                top: 0;
-            }
-
-            .links {
-                aspect-ratio: 1 / 1;
-                width: 100%;
-                position: relative;
-                top: 0;
-
-
-                outline: 1px solid red;
-            }
-
-            .node {
-                background-color: black;
-                border: 1px solid white;
-                border-radius: 100%;
-
-                aspect-ratio: 1 / 1;
-                width: max-content;
-
-                display: flex;
-                align-items: center;
                 justify-content: center;
-            }
-
-            a {
-                color: white;
-                text-decoration: none;
-                padding: 1em;
-            } */
-
-            /* .links {
-                aspect-ratio: 1 / 1;
-                width: 100%;
-                height: 100%;
-
-                outline: 1px solid red;
-            } */
-
-            .node {
-                background-color: black;
-                border: 1px solid crimson;
-                border-radius: 100%;
-                transition: border-width 0.1s;
-
-                aspect-ratio: 1 / 1;
-                width: max-content;
-
-                display: flex;
                 align-items: center;
-                justify-content: center;
-
-                transform: translate(-50%, -50%);
-            }
-            .node:hover {
-                border-width: 0.5em;
-                transition: border-width ease 0.1s;
-
-                letter-spacing: 1ch;
-                transition: letter-spacing ease 0.1s;
             }
 
-            a.node {
-                color: crimson;
-                font-size: 1.5em;
-                text-decoration: none;
-                padding: 0.5em;
-                text-align: center;
+            img {
+                max-width: 100%;
+                display: block;
+                margin: 0 auto;
             }
-            a.node:hover, a.node:active {
-                text-decoration: underline;
-                z-index: 1;
+
+            ul {
+                list-style-type: "- ";
+                padding-left: 2ch;
             }
-            @media screen and (max-width: 600px) {
-                a.node {
-                    font-size: 1em;
-                }
+            ol {
+                list-style-type: decimal-leading-zero;
+                padding-left: 4ch;
             }
-            @media screen and (max-width: 400px) {
-                a.node {
-                    font-size: 0.75em;
-                }
+
+            ul.inline-list {
+                list-style-type: none;
+                padding-left: 0;
+                margin-bottom: 0;
             }
+            ul.inline-list li {
+                display: inline-block;
+            }
+
+            h1 {
+                color: var(--bg);
+                background-color: var(--fg);
+                /* font-weight: bold; */
+                text-align: right;
+                padding-left: 1ch;
+                padding-right: 1ch;
+            }
+
+            p {
+                margin-bottom: 1em;
+            }
+            ul {
+                margin-bottom: 1em;
+            }
+
+            section {
+                background-color: var(--bg);
+                /* padding: 0 1ch 1ch 1ch; */
+                margin-bottom: 1em;
+                border: 1px solid var(--fg);
+                word-break: break-all;
+            }
+            section p {
+                margin-left: 1ch;
+                margin-right: 1ch;
+            }
+            section ul {
+                margin-right: 1ch;
+                margin-left: 1ch;
+            }
+
+            header {
+                border: 1px solid var(--fg);
+                /* color: var(--bg); */
+                /* background-color: var(--fg); */
+                margin-bottom: 1em;
+                /* writing-mode: vertical-rl; */
+            }
+
+            .sidebar {
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: rotate(90deg);
+            }
+
+            .left-decor {
+                opacity: 0.2;
+                position: absolute;
+                left: 0;
+                top: 0;
+                transform-origin: left bottom;
+                transform: translate(0%, -100%) rotate(0.25turn);
+
+                font-size: 10em;
+                white-space: nowrap;
+                z-index: -1;
+                user-select: none;
+            }
+            
+            .right-decor {
+                opacity: 0.2;
+                position: absolute;
+                right: 0;
+                top: 0;
+                transform-origin: right bottom;
+                transform: translate(0%, -100%) rotate(-0.25turn);
+
+                font-size: 10em;
+                white-space: nowrap;
+                z-index: -1;
+                user-select: none;
+            }
+
         </style>
     </head>
+
     <body>
-        <!-- <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas libero deleniti dignissimos itaque doloremque. Placeat, explicabo aspernatur! Amet debitis placeat ratione nobis at totam quisquam laudantium, quod blanditiis possimus ad?
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet incidunt, fugit non, eos perferendis voluptates maxime asperiores veritatis delectus omnis fuga voluptatem, consequuntur ducimus deserunt et consequatur quos corporis tempore!
-        </p> -->
+<!-- 
+        <header>
+            <ul class="inline-list">
+                <li>FILE</li>
+                <li>EDIT</li>
+                <li>VIEW</li>
+                <li>HELP</li>
+            </ul>
+        </header> -->
 
-        <div class="overlay-container" style="max-width: 100vh; margin: 0 auto;">
-            <svg class="overlay-item" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100">
-                <line x1="25" y1="25" x2="75" y2="75" stroke="crimson" stroke-width="1" vector-effect="non-scaling-stroke"/>
-                <line x1="25" y1="50" x2="50" y2="50" stroke="crimson" stroke-width="1" vector-effect="non-scaling-stroke"/>
-                <line x1="75" y1="75" x2="75" y2="50" stroke="crimson" stroke-width="1" vector-effect="non-scaling-stroke"/>
+        <div class="left-decor">
+            67 61 72 62 61 67 65 20 69 6E
+        </div>
+        
+        <div class="right-decor">
+            67 61 72 62 61 67 65 20 6F 75 74
+        </div>
+
+        <main>
+            <section>
+                <h1>orange gas plasma displays 2023-03-07</h1>
+    
+                <p>
+                    They are so cool.
+                </p>
+    
+                <img src="test_orange_plasma_display.png">
+            </section>
+    
+            <section style="display: flex; flex-flow: column nowrap; align-items: center; border: none; background-color: transparent;">
+                <div style="position: relative; left: -30%;">77</div>
+                <div style="position: relative; left: -20%;">61</div>
+                <div style="position: relative; left: -10%;">6B</div>
+                <div style="position: relative; left: 0%;">65</div>
+                <div style="position: relative; left: 10%;">20</div>
+                <div style="position: relative; left: 20%;">75</div>
+                <div style="position: relative; left: 30%;">70</div>
+                <img src="test_gears.png">
+            </section>
+
+            <section>
+                <h1>381005828140</h1>
                 
-                <!-- <line x1="25" y1="25" x2="25" y2="0" stroke="white" stroke-width="1" vector-effect="non-scaling-stroke"/> -->
-                <!-- <line x1="25" y1="50" x2="0" y2="25" stroke="white" stroke-width="1" vector-effect="non-scaling-stroke"/> -->
-                <!-- <line x1="25" y1="50" x2="0" y2="75" stroke="white" stroke-width="1" vector-effect="non-scaling-stroke"/> -->
-                <!-- <line x1="75" y1="50" x2="100" y2="25" stroke="white" stroke-width="1" vector-effect="non-scaling-stroke"/> -->
-                <!-- <line x1="75" y1="50" x2="100" y2="50" stroke="white" stroke-width="1" vector-effect="non-scaling-stroke"/> -->
+                <ul>
+                    <li>Hate is simultaneously like an infectious parasite and a drug.</li>
+                    <li>There are living things that are not of flesh and bone, but of information and collective social behavior.</li>
+                    <li>Both organized and individual spirituality have benefits and faults.</li>
+                    <li>Violence begets violence, and violence is bad.</li>
+                    <li>Avoid red herring conflict.</li>
+                    <li>Freedom is good. Freedom is ugly.</li>
+                    <li>Unspoken social rules form a social tyranny, which must be resisted even at the cost of normalcy.</li>
+                    <li>Punishment is for ensuring the safety of society, not for vengeance.</li>
+                    <li>Resource abundance is possible. A better world is possible.</li>
+                    <li>Social systems are designed, and the designers have a responsibility to design them well.</li>
+                    <li>True democracy must be protected. Corruption must be purged.</li>
+                    <li>If there's an omnipotent god, trust no person, book, or organization that claims to understand it. Not even me.</li>
+                    <li>If there's an omnipotent god, it's probably not a person, so don't pretend it is.</li>
+                    <li>If there's an omnipotent god, it might not care about us.</li>
+                    <li>Divine morality is the natural laws of the universe. The world is unjust because our own notion of morality is incompatible.</li>
+                    <li>Progress without cohesion is impossible. Collaborate now, settle your differences later.</li>
+                    <li>Don't trust the spiritual advice of those who succumb to hate.</li>
+                    <li>If there's a problem, first look within yourself (finite) before looking to the world (infinite), lest you search forever.</li>
+                    <li>The fierce loyalty between two close friends is beautiful.</li>
+                    <li>You likely have more in common with your enemies than your allies.</li>
+                    <li>Privacy is a right.</li>
+                    <li>We do live in a cyberpunk dystopia. Just without the neon.</li>
+                    <li>We manufacture our own propaganda.</li>
+                </ul>
+            </section>
 
-                <!-- <circle cx="50" cy="50" r="5" stroke="gray" stroke-width="1" vector-effect="non-scaling-stroke" fill="transparent"/>
-                <circle cx="50" cy="50" r="10" stroke="gray" stroke-width="1" vector-effect="non-scaling-stroke" fill="transparent"/>
-                <circle cx="50" cy="50" r="15" stroke="gray" stroke-width="1" vector-effect="non-scaling-stroke" fill="transparent"/>
-                <circle cx="50" cy="50" r="20" stroke="gray" stroke-width="1" vector-effect="non-scaling-stroke" fill="transparent"/>
-                <circle cx="50" cy="50" r="25" stroke="gray" stroke-width="1" vector-effect="non-scaling-stroke" fill="transparent"/>
-                <circle cx="50" cy="50" r="30" stroke="gray" stroke-width="1" vector-effect="non-scaling-stroke" fill="transparent"/>
-                <circle cx="50" cy="50" r="35" stroke="gray" stroke-width="1" vector-effect="non-scaling-stroke" fill="transparent"/>
-                <circle cx="50" cy="50" r="40" stroke="gray" stroke-width="1" vector-effect="non-scaling-stroke" fill="transparent"/>
-                <circle cx="50" cy="50" r="45" stroke="gray" stroke-width="1" vector-effect="non-scaling-stroke" fill="transparent"/>
-                <circle cx="50" cy="50" r="50" stroke="gray" stroke-width="1" vector-effect="non-scaling-stroke" fill="transparent"/> -->
-            </svg>
-            <a class="node overlay-item" style="position: relative; left: 25%; top: 25%;" href="links.html">BAY 01</a>
-            <a class="node overlay-item" style="position: relative; left: 25%; top: 50%;" href="links.html">BAY 02</a>
-            <a class="node overlay-item" style="position: relative; left: 50%; top: 50%;" href="index.html">NEXUS</a>
-            <a class="node overlay-item" style="position: relative; left: 75%; top: 75%;" href="media">REACTOR</a>
-            <a class="node overlay-item" style="position: relative; left: 75%; top: 50%;" href="journal.html">MEMORY<br>BANK</a>
-        </div>
-
-        <div style="max-width: 52ch; margin: 0 auto; padding: 0 1em; color: crimson;">
-            <p>
-                These graphics are scalable! Try resizing your browser window.
-            </p>
-            <br>
-            <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa dicta, pariatur sint unde nisi nam, praesentium alias tenetur quia sapiente similique fuga asperiores iure! Porro libero fugit ullam iste unde?
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus dignissimos qui saepe ipsum aliquam! Quo animi atque, quis, magni itaque ab pariatur harum ea tempore dolore magnam nesciunt quas! Corporis.
-            </p>
-            <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt earum omnis amet, iste, repellendus sint similique sequi esse fugit nobis sit, deserunt reprehenderit ipsam nemo consequatur aperiam quam provident voluptatem.
-            </p>
-        </div>
-
+            <section style="display: flex; flex-flow: column nowrap; align-items: center; border: none; background-color: transparent;">
+                <div style="position: relative; left: -30%;">77</div>
+                <div style="position: relative; left: -20%;">61</div>
+                <div style="position: relative; left: -10%;">6B</div>
+                <div style="position: relative; left: 0%;">65</div>
+                <div style="position: relative; left: 10%;">20</div>
+                <div style="position: relative; left: 20%;">75</div>
+                <div style="position: relative; left: 30%;">70</div>
+                <img src="test_tree_of_life.png">
+            </section>
+        </main>
     </body>
 </html>
