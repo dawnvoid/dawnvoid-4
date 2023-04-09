@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="reset.css">
+
+        <title>test2</title>
+
+        <style>
+            :root {
+                --bg-color: #F4EFEC;
+                --fg-color: #000000;
+                --ac-color: #608529;
+                --sb-color: #778877;
+            }
+
+            body {
+                color: var(--fg-color);
+                background-color: var(--bg-color);
+                
+                font-family: 'EB Garamond', Garamond, Consolas, 'Times New Roman', 'Courier New', Courier, monospace;
+                
+                max-width: min(64ch, 100%);
+                margin: 0 auto;
+                padding: 0 1em;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            a {
+                color: var(--ac-color);
+            }
+            a:hover {
+                color: var(--bg-color);
+                background-color: var(--ac-color);
+            }
+
+            ul {
+                list-style: disc;
+            }
+            ul li {
+                margin-left: 1em;
+            }
+
+            p {
+                margin: 1em 0;
+            }
+
+            em {
+                font-style: italic;
+            }
+
+            header {
+                /* color: var(--sb-color); */
+                /* font-family: Consolas, 'Courier New', Courier, monospace; */
+            }
+
+            footer {
+            }
+
+            main {
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>Do Not Read This Document</h1>
+            <em>Don't read it!</em>
+            <p>
+            </p>
+
+        </header>
+
+        <main>
+        
+            <h2>Features</h2>
+            <ul>
+                <li>Convert markdown to html via templates</li>
+                <li>Specify template and other data fields in the frontmatter</li>
+                <li>Macros</li>
+                <li>Date, time, etc.</li>
+                <li>Generate link lists</li>
+                <li>Generate breadcrumbs</li>
+                <li>Include other html files, even recursively</li>
+                <li>(possibly) Custom lisp interpreter for even more power</li>
+                <li>Page categories or collections stored as array… let you iterate through them in the html template</li>
+                <li>Useful for creating nav, lists, etc.</li>
+            </ul>
+        </main>
+
+        <footer>
+        </footer>
+    </body>
+</html>
