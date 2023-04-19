@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="reset.css">
+
+        <title>test</title>
+    
+        <style>
+            @layer theme {
+                body {
+                    font: normal 12px/1.2 serif;
+                }
+
+                p, figure {
+                    margin: 1em 0;
+                }
+
+                h1, h2, h3 {
+                    text-align: center;
+                }
+                h1:first-child, h2:first-child, h3:first-child {
+                    margin-top: 0;
+                }
+                h1 {
+                    font: small-caps 2em/1.2 serif;
+                    margin: .5em 0 .5em;
+                }
+                h2 {
+                    font: small-caps 1.5em/1.2 serif;
+                    margin: .66em 0 .66em;
+                }
+                h3 {
+                    font: small-caps 1em/1.2 serif;
+                    margin: 1em 0 1em;
+                }
+
+                a {
+                    color: inherit;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+
+                code {
+                    font: normal 1em/1.5 monospace;
+                    white-space: pre-wrap;
+                }
+
+                .box {
+                    border: 1px solid;
+                    padding: 1em;
+                    margin: 4px;
+                }
+            }
+
+            :root {
+                /* palette from https://lospec.com/palette-list/1bit-monitor-glow */
+                --fg: #222323;
+                --bg: #f0f6f0;
+            }
+
+            html {
+                color: var(--fg);
+                background-color: var(--bg);
+                /* color: lightblue; */
+                /* --fg: lightblue !important; */
+            }
+
+            body {
+                max-width: 100vw;
+                margin: 0;
+                padding: 0;
+
+                text-align: justify;
+                max-width: min(1000px, 100%);
+                padding: 4px;
+                margin: 0 auto;
+            }
+
+            main {
+                display: grid;
+                grid:
+                    "left center right" 1fr / 200px auto 200px;
+            }
+
+            .left {
+                grid-area: left;
+            }
+
+            .center {
+                grid-area: center;
+            }
+
+            .right {
+                grid-area: right;
+            }
+
+            @media (max-width: 700px) {
+                main {
+                    /* you have total control over how to re-order things! */
+                    grid:
+                        "left center" auto
+                        "right right" auto / 200px 1fr;
+                }
+            }
+
+            @media (max-width: 500px) {
+                main {
+                    /* you have total control over how to re-order things! */
+                    grid:
+                        "left" auto
+                        "center" auto
+                        "right" auto / 1fr;
+                }
+            }
+            
+            nav ul {
+                list-style-type: none;
+
+                display: flex;
+                flex-flow: row wrap;
+                gap: 1em;
+            }
+            nav ul li {
+                flex: 1 0 0%;
+            }
+            nav ul li a {
+                color: var(--bg);
+                background-color: var(--fg);
+                border: 1px solid;
+
+                text-align: center;
+                
+                padding: 0 1ch;
+                width: 100%;
+                display: block;
+            }
+            nav ul li a:hover {
+                color: var(--fg);
+                background-color: var(--bg);
+                
+                text-decoration: none;
+            }
+
+            header {
+                text-align: center;
+                font-style: italic;
+            }
+
+            footer {
+                text-align: center;
+                font-style: italic;
+            }
+
+            img {
+                margin: 0 auto;
+                image-rendering: pixelated;
+            }
+
+            figure {
+                margin: 0 auto;
+            }
+            figure figcaption {
+                text-align: center;
+                font-style: italic;
+            }
+
+            .file {
+                border: 1px solid;
+                /* color: var(--bg); */
+                /* background-color: var(--fg); */
+                margin: 1em 0;
+                padding: 1em;
+            }
+
+            .invert {
+                color: var(--bg);
+                background-color: var(--fg);
+                border-color: var(--fg);
+            }
+        </style>
+    </head>
+    <body>
+        <header class="box invert">
+            Unfathomable Horrors Beyond Your Comprehension!
+        </header>
+    
+        <main>
+            <nav class="left box">
+                <h1>Links</h1>
+                <ul class="bulletless">
+                    <li><a href="">abstract</a></li>
+                    <li><a href="">schema&nbsp;(zones)</a></li>
+                    <li><a href="">visualize</a></li>
+                    <li><a href="">communicate</a></li>
+                    <li><a href="">analyze</a></li>
+                    <li><a href="">interconnect</a></li>
+                    <li><a href="">metadata</a></li>
+                </ul>
+
+                <h2>Taxonomy</h2>
+                <ul>
+                    <li><a href="">0</a></li>
+                    <li><a href="">1</a></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li><a href="">4</a></li>
+                    <li><a href="">5</a></li>
+                    <li><a href="">6</a></li>
+                    <li><a href="">7</a></li>
+                    <li><a href="">8</a></li>
+                    <li><a href="">9</a></li>
+                </ul>
+
+                <h2>Disk 04</h2>
+                <section class="file">
+                    <code>48 65 79 21 20 54 68 61 6E 6B 73 20 66 6F 72 20 76 69 73 69 74 69 6E 67 2E 20 45 6E 6A 6F 79 21</code>
+                </section>
+            </nav>
+
+            <section class="center box">
+                <h1>Outerworld</h1>
+                <p>
+                    The City has its own flora and fauna. A robot ecology with a mind of its own. The taxonomy here is staggering, rivaling the diversity of biological life.
+                </p>
+                <p>
+                    Little robots are everywhere. Most have minds of their own, complete with memories, personalities, habits. Most are docile, though some (like mantises), are violent towards humans. They communicate visually and over radio &mdash; the City may seem silent, but the radio waves are alive with chatter.
+                </p>
+                <p>
+                    Deep within the City's bowels are the automated factories that produce the robot population. Nobody knows who controls them.
+                </p>
+
+                <h2>Centre</h2>
+                <p>
+                    The center of the city. It is a dense jungle of concrete and rebar and wires and pipe. Gargantuan rotting skyscrapers block all the sunlight. Luckily, bioluminescent life has taken hold. Inside is akin to a cave system &mdash; you'll have to move vertically as much as you will horizontally.
+                </p>
+                
+                <h2>Sprawl</h2>
+                <p>
+                    Beyond the densest part of the city, the Sprawl. Here, sunlight reaches the ground and natural life flourishes.
+                </p>
+                <p>
+                    Still it was a square of faint light. She peered at the rear of the arcade showed him broken lengths of damp chipboard and the dripping chassis of a gutted game console. That was Wintermute, manipulating the lock the way it had manipulated the drone micro and the amplified breathing of the previous century.
+                </p>
+
+                <h2>Rim</h2>
+                <p>
+                    The edge of what was once an ocean. All that's left now is cracked earth baking under the sun. Any biomass has long since burned away in raging continental fires.
+                </p>
+                <p>
+                    She peered at the clinic, Molly took him to the Tank War, mouth touched with hot gold as a gliding cursor struck sparks from the wall between the bookcases, its distorted face sagging to the bare concrete floor. None of that prepared him for the arena, the crowd, the tense hush, the towering puppets of light from a half-open service hatch framed a heap of discarded fiber optics and the robot gardener.
+                </p>
+
+                <marquee style="font: normal 1em/1 monospace;">
+                    ▄█▀▀▀▀█▀▀█▀▀▀ ▀▀█▀▀▀ ▀▄ ▄█▀█▀▀▀█▄ ▄▄▄█▀▀▄▀ ▄█▀▀▀▀█▀ ▀▀▀▀█▀▀█▄▀▀█▄▀▀█▀█▄▀ ▄▀▀▀█▀▄▀█▄▄▄█▀▄█▄▀▀█▄▀▄▀█▀▄█▀▀▀█▄ ▀▀▀█▄▀▄▄█▀▀▀█▄█▀█▄▄
+                </marquee>
+            </section>
+
+            <section class="right box">
+                <h1>Creatures</h1>
+
+                <div style="display: flex; flex-flow: row wrap; gap: 1em;">
+                    <figure>
+                        <img src="test4_screamer.png">
+                        <figcaption>Screamer (annoying little fucks)</figcaption>
+                    </figure>
+                    
+                    <figure>
+                        <img src="test4_bulb_urchin.png">
+                        <figcaption>Bulb Urchin</figcaption>
+                    </figure>
+    
+                    <figure>
+                        <img src="test4_mantis.png">
+                        <figcaption>Mantis (you're already dead)</figcaption>
+                    </figure>
+                </div>
+            </section>
+        </main>
+    
+        <footer class="box invert">
+            Copyright my ass!
+        </footer>
+    </body>
+</html>
